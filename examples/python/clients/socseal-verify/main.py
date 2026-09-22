@@ -32,7 +32,7 @@ async def paid_get(http, path: str) -> dict:
     await res.aread()
     try:
         return json.loads(res.text)
-    except Exception:
+    except (ValueError, TypeError):
         return {
             "status": getattr(res, "status_code", "?"),
             "body": res.text[:200],
