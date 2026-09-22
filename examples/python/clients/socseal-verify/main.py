@@ -33,7 +33,10 @@ async def paid_get(http, path: str) -> dict:
     try:
         return json.loads(res.text)
     except Exception:
-        return {"status": getattr(res, "status_code", "?"), "body": res.text[:200]}
+        return {
+            "status": getattr(res, "status_code", "?"),
+            "body": res.text[:200],
+        }
 
 
 async def main() -> None:
