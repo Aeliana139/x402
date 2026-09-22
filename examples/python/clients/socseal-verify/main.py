@@ -16,7 +16,6 @@ import sys
 
 from dotenv import load_dotenv
 from eth_account import Account
-
 from x402 import x402Client
 from x402.http import x402HTTPClient
 from x402.http.clients import x402HttpxClient
